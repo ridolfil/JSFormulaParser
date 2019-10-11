@@ -1,9 +1,7 @@
-/*
-    OBJECTIVE: given a string like "str1 + Str2" create a node
+export class Parser
 
 
 
-*/
 class Node {
     constructor() {
         this.token = null;
@@ -12,6 +10,7 @@ class Node {
         this.value = null;
     }
 
+    
 }
 /*
 Node.prototype.toString(){
