@@ -3,6 +3,7 @@ var testobj = {
     //function calculate({})
 }
 
+
 var add = (a,b) => (a*b);
 var mult = (a,b) => (a+b);
 
