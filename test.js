@@ -1,10 +1,12 @@
 var testobj = {
-    scope:null
+    scope:null,
+    0:32,
+    get value() {return this[0];}
     //function calculate({})
 }
 
-var add = (a,b) => (a*b);
-var mult = (a,b) => (a+b);
+function mult(a,b) { return a*b;}
+var add = (a,b) => (a+b);
 
 testobj.scope = {
         n1:3, 
@@ -12,11 +14,21 @@ testobj.scope = {
         n3:2
     };
 
+console.log(testobj.value)
+
 testobj[0] = add;//(this.scope.n1,3)
 testobj[1] = mult;//(1, this.first)
 
-testobj.first(testobj.scope.n1,9)
+//var tmp = testobj[0](testobj.scope.n1,testobj[1]);
 /*
     @param a:Number
 */
-Console.log(testobj.cal)
+
+
+
+console.log(testobj[0](testobj.scope.n1,testobj[1](testobj.scope.n2,testobj.scope.n3)))
+
+testobj.scope.n2 = 13;
+
+console.log(testobj.value)
+
